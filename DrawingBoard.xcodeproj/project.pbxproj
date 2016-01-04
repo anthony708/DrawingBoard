@@ -14,6 +14,14 @@
 		92CC1B471C3A57A70084F815 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 92CC1B451C3A57A70084F815 /* LaunchScreen.storyboard */; };
 		92CC1B521C3A57A80084F815 /* DrawingBoardTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B511C3A57A80084F815 /* DrawingBoardTests.swift */; };
 		92CC1B5D1C3A57A80084F815 /* DrawingBoardUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B5C1C3A57A80084F815 /* DrawingBoardUITests.swift */; };
+		92CC1B6D1C3A5B2D0084F815 /* Board.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B6C1C3A5B2D0084F815 /* Board.swift */; };
+		92CC1B6F1C3A5EAF0084F815 /* BaseBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B6E1C3A5EAF0084F815 /* BaseBrush.swift */; };
+		92CC1B721C3A63AF0084F815 /* PencilBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B711C3A63AF0084F815 /* PencilBrush.swift */; };
+		92CC1B741C3A64810084F815 /* LineBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B731C3A64810084F815 /* LineBrush.swift */; };
+		92CC1B761C3A64D40084F815 /* DashLineBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B751C3A64D40084F815 /* DashLineBrush.swift */; };
+		92CC1B781C3A657B0084F815 /* RectangleBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B771C3A657B0084F815 /* RectangleBrush.swift */; };
+		92CC1B7A1C3A66220084F815 /* EllipseBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B791C3A66220084F815 /* EllipseBrush.swift */; };
+		92CC1B7C1C3A66BE0084F815 /* EraserBrush.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B7B1C3A66BE0084F815 /* EraserBrush.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		92CC1B581C3A57A80084F815 /* DrawingBoardUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingBoardUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		92CC1B5C1C3A57A80084F815 /* DrawingBoardUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingBoardUITests.swift; sourceTree = "<group>"; };
 		92CC1B5E1C3A57A80084F815 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		92CC1B6C1C3A5B2D0084F815 /* Board.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Board.swift; sourceTree = "<group>"; };
+		92CC1B6E1C3A5EAF0084F815 /* BaseBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseBrush.swift; sourceTree = "<group>"; };
+		92CC1B711C3A63AF0084F815 /* PencilBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PencilBrush.swift; sourceTree = "<group>"; };
+		92CC1B731C3A64810084F815 /* LineBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineBrush.swift; sourceTree = "<group>"; };
+		92CC1B751C3A64D40084F815 /* DashLineBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashLineBrush.swift; sourceTree = "<group>"; };
+		92CC1B771C3A657B0084F815 /* RectangleBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RectangleBrush.swift; sourceTree = "<group>"; };
+		92CC1B791C3A66220084F815 /* EllipseBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EllipseBrush.swift; sourceTree = "<group>"; };
+		92CC1B7B1C3A66BE0084F815 /* EraserBrush.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EraserBrush.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +113,15 @@
 		92CC1B3B1C3A57A70084F815 /* DrawingBoard */ = {
 			isa = PBXGroup;
 			children = (
+				92CC1B701C3A63920084F815 /* Drawing Tools */,
 				92CC1B3C1C3A57A70084F815 /* AppDelegate.swift */,
 				92CC1B3E1C3A57A70084F815 /* ViewController.swift */,
 				92CC1B401C3A57A70084F815 /* Main.storyboard */,
 				92CC1B431C3A57A70084F815 /* Assets.xcassets */,
 				92CC1B451C3A57A70084F815 /* LaunchScreen.storyboard */,
 				92CC1B481C3A57A70084F815 /* Info.plist */,
+				92CC1B6C1C3A5B2D0084F815 /* Board.swift */,
+				92CC1B6E1C3A5EAF0084F815 /* BaseBrush.swift */,
 			);
 			path = DrawingBoard;
 			sourceTree = "<group>";
@@ -123,6 +142,19 @@
 				92CC1B5E1C3A57A80084F815 /* Info.plist */,
 			);
 			path = DrawingBoardUITests;
+			sourceTree = "<group>";
+		};
+		92CC1B701C3A63920084F815 /* Drawing Tools */ = {
+			isa = PBXGroup;
+			children = (
+				92CC1B711C3A63AF0084F815 /* PencilBrush.swift */,
+				92CC1B731C3A64810084F815 /* LineBrush.swift */,
+				92CC1B751C3A64D40084F815 /* DashLineBrush.swift */,
+				92CC1B771C3A657B0084F815 /* RectangleBrush.swift */,
+				92CC1B791C3A66220084F815 /* EllipseBrush.swift */,
+				92CC1B7B1C3A66BE0084F815 /* EraserBrush.swift */,
+			);
+			name = "Drawing Tools";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,8 +291,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				92CC1B7C1C3A66BE0084F815 /* EraserBrush.swift in Sources */,
+				92CC1B781C3A657B0084F815 /* RectangleBrush.swift in Sources */,
+				92CC1B721C3A63AF0084F815 /* PencilBrush.swift in Sources */,
 				92CC1B3F1C3A57A70084F815 /* ViewController.swift in Sources */,
+				92CC1B6F1C3A5EAF0084F815 /* BaseBrush.swift in Sources */,
+				92CC1B761C3A64D40084F815 /* DashLineBrush.swift in Sources */,
 				92CC1B3D1C3A57A70084F815 /* AppDelegate.swift in Sources */,
+				92CC1B7A1C3A66220084F815 /* EllipseBrush.swift in Sources */,
+				92CC1B741C3A64810084F815 /* LineBrush.swift in Sources */,
+				92CC1B6D1C3A5B2D0084F815 /* Board.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

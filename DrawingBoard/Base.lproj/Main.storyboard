@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawingBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +17,62 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-Ba-QlZ" customClass="Board" customModule="DrawingBoard" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e78-lm-u2d" userLabel="topView">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vbx-7q-QcD">
+                                        <rect key="frame" x="20" y="8" width="560" height="29"/>
+                                        <animations/>
+                                        <segments>
+                                            <segment title="铅笔"/>
+                                            <segment title="直尺"/>
+                                            <segment title="虚线"/>
+                                            <segment title="矩形"/>
+                                            <segment title="圆形"/>
+                                            <segment title="橡皮擦"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="switchBrush:" destination="BYZ-38-t0r" eventType="valueChanged" id="FCG-NE-Lxy"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="vbx-7q-QcD" secondAttribute="trailing" constant="20" id="LGX-Wn-ba0"/>
+                                    <constraint firstItem="vbx-7q-QcD" firstAttribute="top" secondItem="e78-lm-u2d" secondAttribute="topMargin" id="MUq-SK-axO"/>
+                                    <constraint firstItem="vbx-7q-QcD" firstAttribute="leading" secondItem="e78-lm-u2d" secondAttribute="leading" constant="20" id="gZB-dl-t8u"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dLA-Ba-QlZ" secondAttribute="trailing" id="2md-IN-qHd"/>
+                            <constraint firstItem="dLA-Ba-QlZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N6J-kb-f6C"/>
+                            <constraint firstItem="dLA-Ba-QlZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NiA-yJ-1QO"/>
+                            <constraint firstItem="e78-lm-u2d" firstAttribute="trailing" secondItem="dLA-Ba-QlZ" secondAttribute="trailing" id="Zrr-CP-baF"/>
+                            <constraint firstItem="e78-lm-u2d" firstAttribute="leading" secondItem="dLA-Ba-QlZ" secondAttribute="leading" id="j6j-xZ-IMD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e78-lm-u2d" secondAttribute="bottom" constant="556" id="pDQ-Xe-NK1"/>
+                            <constraint firstItem="e78-lm-u2d" firstAttribute="top" secondItem="dLA-Ba-QlZ" secondAttribute="top" id="xLW-rB-b9a"/>
+                            <constraint firstAttribute="bottom" secondItem="dLA-Ba-QlZ" secondAttribute="bottom" id="yUD-PV-ElB"/>
+                        </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="board" destination="dLA-Ba-QlZ" id="0ed-4v-v8m"/>
+                        <outlet property="topView" destination="e78-lm-u2d" id="wb1-Ii-Goy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="305" y="387"/>
         </scene>
     </scenes>
 </document>
