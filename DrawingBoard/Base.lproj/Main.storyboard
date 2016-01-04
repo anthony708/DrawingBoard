@@ -60,11 +60,32 @@
                                     <constraint firstItem="Ysa-GG-Hx5" firstAttribute="leading" secondItem="WFf-5a-siV" secondAttribute="leading" id="zdY-Xk-zrd"/>
                                 </constraints>
                             </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xRF-Xz-m9g">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="zZd-7w-TSt"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem title="画笔设置" id="UxH-XA-bSl">
+                                        <connections>
+                                            <action selector="paintingBrushSettings" destination="BYZ-38-t0r" id="eCG-D6-9QF"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="bIz-s0-Crh"/>
+                                    <barButtonItem title="背景设置" id="VYw-YL-hhL"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pgb-Zi-gr2"/>
+                                    <barButtonItem title="保存到图库" id="lnB-rV-0eh"/>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="KGx-ez-jJs" firstAttribute="top" secondItem="xRF-Xz-m9g" secondAttribute="bottom" id="Ik1-ef-6gM"/>
                             <constraint firstItem="WFf-5a-siV" firstAttribute="leading" secondItem="tc7-u1-c72" secondAttribute="leading" id="ZD3-Ip-a8S"/>
+                            <constraint firstItem="xRF-Xz-m9g" firstAttribute="leading" secondItem="tc7-u1-c72" secondAttribute="leading" id="aTp-vQ-nj7"/>
+                            <constraint firstAttribute="trailing" secondItem="xRF-Xz-m9g" secondAttribute="trailing" id="cGr-fr-0q4"/>
                             <constraint firstAttribute="trailing" secondItem="WFf-5a-siV" secondAttribute="trailing" id="cpp-dg-3iN"/>
                             <constraint firstItem="KGx-ez-jJs" firstAttribute="top" secondItem="WFf-5a-siV" secondAttribute="bottom" id="jSF-bz-NgL"/>
                             <constraint firstItem="WFf-5a-siV" firstAttribute="top" secondItem="2gw-FZ-q4l" secondAttribute="bottom" id="pFO-eQ-wRy"/>
@@ -73,6 +94,8 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="board" destination="WFf-5a-siV" id="7aW-xk-XHC"/>
+                        <outlet property="toolbar" destination="xRF-Xz-m9g" id="DEf-ol-e5q"/>
+                        <outlet property="toolbarConstraintHeight" destination="zZd-7w-TSt" id="hdb-Q2-HDs"/>
                         <outlet property="topView" destination="Ysa-GG-Hx5" id="9R1-lr-5RW"/>
                     </connections>
                 </viewController>
