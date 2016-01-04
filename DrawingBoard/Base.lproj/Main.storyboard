@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -11,63 +10,70 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="DrawingBoard" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="2gw-FZ-q4l"/>
+                        <viewControllerLayoutGuide type="bottom" id="KGx-ez-jJs"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="tc7-u1-c72">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLA-Ba-QlZ" customClass="Board" customModule="DrawingBoard" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WFf-5a-siV" customClass="Board" customModule="DrawingBoard" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e78-lm-u2d" userLabel="topView">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                 <subviews>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vbx-7q-QcD">
-                                        <rect key="frame" x="20" y="8" width="560" height="29"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ysa-GG-Hx5" userLabel="Top View">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="p1B-Rt-Gki">
+                                                <rect key="frame" x="20" y="8" width="560" height="29"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="28" id="b6Z-ty-45o"/>
+                                                </constraints>
+                                                <segments>
+                                                    <segment title="铅笔"/>
+                                                    <segment title="直尺"/>
+                                                    <segment title="虚线"/>
+                                                    <segment title="矩形"/>
+                                                    <segment title="圆形"/>
+                                                    <segment title="橡皮擦"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="switchBrush:" destination="BYZ-38-t0r" eventType="valueChanged" id="oty-la-Xj1"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
                                         <animations/>
-                                        <segments>
-                                            <segment title="铅笔"/>
-                                            <segment title="直尺"/>
-                                            <segment title="虚线"/>
-                                            <segment title="矩形"/>
-                                            <segment title="圆形"/>
-                                            <segment title="橡皮擦"/>
-                                        </segments>
-                                        <connections>
-                                            <action selector="switchBrush:" destination="BYZ-38-t0r" eventType="valueChanged" id="FCG-NE-Lxy"/>
-                                        </connections>
-                                    </segmentedControl>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="p1B-Rt-Gki" firstAttribute="top" secondItem="Ysa-GG-Hx5" secondAttribute="top" constant="8" id="51W-0T-jgV"/>
+                                            <constraint firstAttribute="trailing" secondItem="p1B-Rt-Gki" secondAttribute="trailing" constant="20" id="AMy-Wd-qWG"/>
+                                            <constraint firstItem="p1B-Rt-Gki" firstAttribute="leading" secondItem="Ysa-GG-Hx5" secondAttribute="leading" constant="20" id="Mbh-Bf-Rqm"/>
+                                            <constraint firstAttribute="height" constant="44" id="ldP-JI-w1I"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="vbx-7q-QcD" secondAttribute="trailing" constant="20" id="LGX-Wn-ba0"/>
-                                    <constraint firstItem="vbx-7q-QcD" firstAttribute="top" secondItem="e78-lm-u2d" secondAttribute="topMargin" id="MUq-SK-axO"/>
-                                    <constraint firstItem="vbx-7q-QcD" firstAttribute="leading" secondItem="e78-lm-u2d" secondAttribute="leading" constant="20" id="gZB-dl-t8u"/>
+                                    <constraint firstItem="Ysa-GG-Hx5" firstAttribute="top" secondItem="WFf-5a-siV" secondAttribute="top" id="J33-ga-J3y"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ysa-GG-Hx5" secondAttribute="trailing" id="jmU-fN-tKe"/>
+                                    <constraint firstItem="Ysa-GG-Hx5" firstAttribute="leading" secondItem="WFf-5a-siV" secondAttribute="leading" id="zdY-Xk-zrd"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="dLA-Ba-QlZ" secondAttribute="trailing" id="2md-IN-qHd"/>
-                            <constraint firstItem="dLA-Ba-QlZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N6J-kb-f6C"/>
-                            <constraint firstItem="dLA-Ba-QlZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="NiA-yJ-1QO"/>
-                            <constraint firstItem="e78-lm-u2d" firstAttribute="trailing" secondItem="dLA-Ba-QlZ" secondAttribute="trailing" id="Zrr-CP-baF"/>
-                            <constraint firstItem="e78-lm-u2d" firstAttribute="leading" secondItem="dLA-Ba-QlZ" secondAttribute="leading" id="j6j-xZ-IMD"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e78-lm-u2d" secondAttribute="bottom" constant="556" id="pDQ-Xe-NK1"/>
-                            <constraint firstItem="e78-lm-u2d" firstAttribute="top" secondItem="dLA-Ba-QlZ" secondAttribute="top" id="xLW-rB-b9a"/>
-                            <constraint firstAttribute="bottom" secondItem="dLA-Ba-QlZ" secondAttribute="bottom" id="yUD-PV-ElB"/>
+                            <constraint firstItem="WFf-5a-siV" firstAttribute="leading" secondItem="tc7-u1-c72" secondAttribute="leading" id="ZD3-Ip-a8S"/>
+                            <constraint firstAttribute="trailing" secondItem="WFf-5a-siV" secondAttribute="trailing" id="cpp-dg-3iN"/>
+                            <constraint firstItem="KGx-ez-jJs" firstAttribute="top" secondItem="WFf-5a-siV" secondAttribute="bottom" id="jSF-bz-NgL"/>
+                            <constraint firstItem="WFf-5a-siV" firstAttribute="top" secondItem="2gw-FZ-q4l" secondAttribute="bottom" id="pFO-eQ-wRy"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="board" destination="dLA-Ba-QlZ" id="0ed-4v-v8m"/>
-                        <outlet property="topView" destination="e78-lm-u2d" id="wb1-Ii-Goy"/>
+                        <outlet property="board" destination="WFf-5a-siV" id="7aW-xk-XHC"/>
+                        <outlet property="topView" destination="Ysa-GG-Hx5" id="9R1-lr-5RW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
