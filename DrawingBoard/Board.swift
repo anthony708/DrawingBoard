@@ -16,6 +16,9 @@ enum DrawingState {
 class Board: UIImageView {
     
     var brush: BaseBrush?
+    
+    var drawingStateChangedBlock: ((state: DrawingState) -> Void)?
+    
     private var realImage: UIImage?
     
     private var drawingStates: DrawingState!
@@ -58,10 +61,29 @@ class Board: UIImageView {
         }
     }
     
+    func takeImage() -> UIImage {
+        UIGraphicsBeginImageContext(self.bounds.size)
+        
+        self.backgroundColor?.setFill()
+        UIRectFill(self.bounds)
+        
+        self.image?.drawInRect(self.bounds)
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return image
+    }
+    
+ 
     // - Drawing
     
     private func drawingImages() {
         if let brush = self.brush {
+            // hook
+            if let drawingStateChangedBlock = drawingStateChangedBlock {
+                drawingStateChangedBlock(state: self.drawingStates)
+            }
             
             // 1. 开启一个新context，保存每次的绘图状态
             

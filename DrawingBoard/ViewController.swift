@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     @IBOutlet var topView: UIView!
     @IBOutlet var toolbar: UIToolbar!
     @IBOutlet var toolbarConstraintHeight: NSLayoutConstraint!
+    @IBOutlet var topViewConstraintY: NSLayoutConstraint!
+    @IBOutlet var toolbarConstraintBottom: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +34,37 @@ class ViewController: UIViewController {
         
         self.setupBrushSettingsView()
         self.setupBackgroundSettingsView()
+        
+        // deal with hook
+        self.board.drawingStateChangedBlock = { (state: DrawingState) -> () in
+            if state != .Moved {
+                UIView.beginAnimations(nil, context: nil)
+                if state == .Began {
+                    self.topViewConstraintY.constant = -self.topView.frame.size.height
+                    self.toolbarConstraintBottom.constant = -self.toolbar.frame.size.height
+                    
+                    self.topView.layoutIfNeeded()
+                    self.toolbar.layoutIfNeeded()
+                } else if state == .Ended {
+                    UIView.setAnimationDelay(1.0)
+                    self.topViewConstraintY.constant = 0
+                    self.toolbarConstraintBottom.constant = 0
+                    
+                    self.topView.layoutIfNeeded()
+                    self.toolbar.layoutIfNeeded()
+                }
+                UIView.commitAnimations()
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func savaToAlbum() {
+        UIImageWriteToSavedPhotosAlbum(self.board.takeImage(), self, "image:didFinishSavingWithError:contextInfo:", nil)
     }
     
     func addConstraintsToToolbarForSettingsView(view: UIView) {
@@ -84,6 +112,15 @@ class ViewController: UIViewController {
         
         self.toolbar.bringSubviewToFront(self.currentSettingsView!)
     }
+    
+    func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo: UnsafePointer<Void>) {
+        if let err = error {
+            UIAlertView(title: "错误", message: err.localizedDescription, delegate: nil, cancelButtonTitle: "确定").show()
+        } else {
+            UIAlertView(title: "提示", message: "保存成功", delegate: nil, cancelButtonTitle: "确定").show()
+        }
+    }
+    
     
     @IBAction func backgroundSettings() {
         self.currentSettingsView = self.toolbar.viewWithTag(2)

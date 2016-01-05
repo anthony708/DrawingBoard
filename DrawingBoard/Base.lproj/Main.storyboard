@@ -79,7 +79,11 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="pgb-Zi-gr2"/>
-                                    <barButtonItem title="保存到图库" id="lnB-rV-0eh"/>
+                                    <barButtonItem title="保存到图库" id="lnB-rV-0eh">
+                                        <connections>
+                                            <action selector="savaToAlbum" destination="BYZ-38-t0r" id="k9b-y8-P6F"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -99,8 +103,10 @@
                     <connections>
                         <outlet property="board" destination="WFf-5a-siV" id="7aW-xk-XHC"/>
                         <outlet property="toolbar" destination="xRF-Xz-m9g" id="DEf-ol-e5q"/>
+                        <outlet property="toolbarConstraintBottom" destination="Ik1-ef-6gM" id="UeC-lB-0tP"/>
                         <outlet property="toolbarConstraintHeight" destination="zZd-7w-TSt" id="hdb-Q2-HDs"/>
                         <outlet property="topView" destination="Ysa-GG-Hx5" id="9R1-lr-5RW"/>
+                        <outlet property="topViewConstraintY" destination="51W-0T-jgV" id="opV-FB-Qqg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

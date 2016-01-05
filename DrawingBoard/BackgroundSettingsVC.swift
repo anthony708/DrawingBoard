@@ -42,7 +42,7 @@ class BackgroundSettingsVC: UIViewController, UIImagePickerControllerDelegate, U
         self.presentViewController(self.pickerController, animated: true, completion: nil)
     }
     
-    // 
+    // UIImagePickerControllerDelegate Methods
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
@@ -53,6 +53,7 @@ class BackgroundSettingsVC: UIViewController, UIImagePickerControllerDelegate, U
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // UINavigationControllerDelegate Methods
     func navigationController(navigationController: UINavigationController, willShowViewController viewController: UIViewController, animated: Bool) {
         UIApplication.sharedApplication().setStatusBarHidden(true, withAnimation: .None)
     }
