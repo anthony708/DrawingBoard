@@ -31,6 +31,7 @@ class ViewController: UIViewController {
         self.toolbarItems = self.toolbar.items
         
         self.setupBrushSettingsView()
+        self.setupBackgroundSettingsView()
     }
     
     override func didReceiveMemoryWarning() {
@@ -82,6 +83,35 @@ class ViewController: UIViewController {
         UIView.commitAnimations()
         
         self.toolbar.bringSubviewToFront(self.currentSettingsView!)
+    }
+    
+    @IBAction func backgroundSettings() {
+        self.currentSettingsView = self.toolbar.viewWithTag(2)
+        self.currentSettingsView?.hidden = false
+        
+        self.updateToolbarForSettingsView()
+    }
+    
+    func setupBackgroundSettingsView() {
+        let backgroundSettingsVC = UINib(nibName: "BackgroundSettingsVC", bundle: nil).instantiateWithOwner(nil, options: nil).first as! BackgroundSettingsVC
+        
+        self.addConstraintsToToolbarForSettingsView(backgroundSettingsVC.view)
+        
+        backgroundSettingsVC.view.hidden = true
+        backgroundSettingsVC.view.tag = 2
+        backgroundSettingsVC.setBackgroundColor(self.board.backgroundColor!)
+        
+        self.addChildViewController(backgroundSettingsVC)
+        
+        backgroundSettingsVC.backgroundImageChangedBlock = {
+            [unowned self] (backgroundImage: UIImage) in
+            self.board.backgroundColor = UIColor(patternImage: backgroundImage)
+        }
+        
+        backgroundSettingsVC.backgroundColorChangedBlock = {
+            [unowned self] (backgroundColor: UIColor) in
+            self.board.backgroundColor = backgroundColor
+        }
     }
     
     @IBAction func endSetting() {

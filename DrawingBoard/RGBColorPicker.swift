@@ -52,7 +52,7 @@ class RGBColorPicker: UIView {
         super.layoutSubviews()
         
         let sliderHeight = CGFloat(31)
-        let labelWidth = CGFloat(29)
+        let labelWidth = CGFloat(31)
         let yHeight = self.bounds.size.height / CGFloat(sliders.count)
         
         for index in 0..<self.sliders.count {

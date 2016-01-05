@@ -25,6 +25,8 @@
 		92CC1B801C3A9A4E0084F815 /* RGBColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B7F1C3A9A4E0084F815 /* RGBColorPicker.swift */; };
 		92CC1B821C3AA8C70084F815 /* PaintingBrushSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B811C3AA8C70084F815 /* PaintingBrushSettingsView.swift */; };
 		92CC1B841C3AAA790084F815 /* PaintingBrushSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CC1B831C3AAA790084F815 /* PaintingBrushSettingsView.xib */; };
+		92CC1B881C3B5C5D0084F815 /* BackgroundSettingsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CC1B871C3B5C5D0084F815 /* BackgroundSettingsVC.swift */; };
+		92CC1B8A1C3B5DEC0084F815 /* BackgroundSettingsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 92CC1B891C3B5DEC0084F815 /* BackgroundSettingsVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		92CC1B7F1C3A9A4E0084F815 /* RGBColorPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RGBColorPicker.swift; sourceTree = "<group>"; };
 		92CC1B811C3AA8C70084F815 /* PaintingBrushSettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingBrushSettingsView.swift; sourceTree = "<group>"; };
 		92CC1B831C3AAA790084F815 /* PaintingBrushSettingsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaintingBrushSettingsView.xib; sourceTree = "<group>"; };
+		92CC1B871C3B5C5D0084F815 /* BackgroundSettingsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundSettingsVC.swift; sourceTree = "<group>"; };
+		92CC1B891C3B5DEC0084F815 /* BackgroundSettingsVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BackgroundSettingsVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +135,8 @@
 				92CC1B7F1C3A9A4E0084F815 /* RGBColorPicker.swift */,
 				92CC1B811C3AA8C70084F815 /* PaintingBrushSettingsView.swift */,
 				92CC1B831C3AAA790084F815 /* PaintingBrushSettingsView.xib */,
+				92CC1B871C3B5C5D0084F815 /* BackgroundSettingsVC.swift */,
+				92CC1B891C3B5DEC0084F815 /* BackgroundSettingsVC.xib */,
 			);
 			path = DrawingBoard;
 			sourceTree = "<group>";
@@ -275,6 +281,7 @@
 			files = (
 				92CC1B841C3AAA790084F815 /* PaintingBrushSettingsView.xib in Resources */,
 				92CC1B471C3A57A70084F815 /* LaunchScreen.storyboard in Resources */,
+				92CC1B8A1C3B5DEC0084F815 /* BackgroundSettingsVC.xib in Resources */,
 				92CC1B441C3A57A70084F815 /* Assets.xcassets in Resources */,
 				92CC1B421C3A57A70084F815 /* Main.storyboard in Resources */,
 			);
@@ -306,6 +313,7 @@
 				92CC1B721C3A63AF0084F815 /* PencilBrush.swift in Sources */,
 				92CC1B3F1C3A57A70084F815 /* ViewController.swift in Sources */,
 				92CC1B821C3AA8C70084F815 /* PaintingBrushSettingsView.swift in Sources */,
+				92CC1B881C3B5C5D0084F815 /* BackgroundSettingsVC.swift in Sources */,
 				92CC1B6F1C3A5EAF0084F815 /* BaseBrush.swift in Sources */,
 				92CC1B801C3A9A4E0084F815 /* RGBColorPicker.swift in Sources */,
 				92CC1B761C3A64D40084F815 /* DashLineBrush.swift in Sources */,
